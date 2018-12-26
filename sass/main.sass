@@ -1,0 +1,494 @@
+@import "fonts.sass"
+
+html, body
+	margin: 0
+	padding: 0
+	font-family: 'Myriad Pro', sans-serif
+	font-size: 16px
+	color: #242424
+	word-wrap: break-word
+	box-sizing: border-box
+*, *::before, *::after
+	box-sizing: inherit
+.clearfix::after
+	content: ""
+	display: table
+	clear: both
+.wow
+	visibility: hidden
+.container
+	max-width: 1728px
+	margin: 0 auto
+.visually-hidden
+  position: absolute
+  clip: rect(0 0 0 0)
+  width: 1px
+  height: 1px
+  margin: -1px
+.mw1920
+	max-width: 1920px
+	margin: 0 auto
+	.row
+		margin: 0
+img
+	display: block
+	max-width: 100%
+.h-100
+	height: 100% !important
+.btn
+	display: inline-block
+	padding: 22px 12%
+	color: #f05333
+	font-size: 20px
+	font-weight: bold
+	border: 3px solid #f05333
+	border-radius: 32px
+	text-decoration: none
+	transition: all 0.2s linear
+	&-white
+		color: #f05333
+		border: 3px solid #ffffff
+		background-color: #ffffff
+	&:hover, &:focus, &:active
+		color: #ffffff
+		border-color: #f05333
+		background-color: #f05333
+
+.header
+	padding: 28px 15px
+	text-align: right
+	&__right > *
+		display: inline-block
+		vertical-align: middle
+	&__lang
+		max-width: 28px
+		margin-right: 100px
+	&__menu-btn
+		overflow: hidden
+
+// burger
+.ham
+	cursor: pointer
+	-webkit-tap-highlight-color: transparent
+	transition: transform 400ms
+	-moz-user-select: none
+	-webkit-user-select: none
+	-ms-user-select: none
+	user-select: none
+.hamRotate.active
+ 	transform: rotate(45deg)
+
+.hamRotate180.active
+ 	transform: rotate(180deg)
+.line
+ 	fill: none
+ 	transition: stroke-dasharray 400ms, stroke-dashoffset 400ms
+ 	stroke: #ffffff
+ 	stroke-width: 5.5
+ 	stroke-linecap: round
+.ham8
+	cursor: pointer
+	.top
+		stroke-dasharray: 40 160
+	.middle
+		stroke-dasharray: 40 142
+		transform-origin: 50%
+		transition: transform 400ms
+	.bottom
+		stroke-dasharray: 40 85
+		transform-origin: 50%
+		transition: transform 400ms, stroke-dashoffset 400ms
+	&.active
+		.top
+			stroke-dashoffset: -64px
+		.middle
+		  transform: rotate(90deg)
+		.bottom
+			stroke-dashoffset: -64px
+.main-about
+	padding-top: 138px
+	padding-bottom: 81px
+	margin-top: -141px
+	background-image: url('../img/about-bg-line-top.png'), url('../img/about-bg-line-right.png'), url('../img/about-bg-line-left.png'), linear-gradient(23deg, #007f78 0%, #2b3f93 100%)
+	background-position: center top, right center, left center
+	background-repeat: no-repeat
+	&__title
+		margin-top: 161px
+		margin-bottom: 134px
+		color: #ffffff
+		font-size: 65px
+		font-weight: bold
+		line-height: 90px
+		text-transform: uppercase
+	&__img
+		max-width: 100%
+.focus
+	&__slider
+		padding: 0
+		.slick
+			&-list, &-track
+				height: 100%
+		&-img
+			&-item
+				height: 100%
+				min-height: 300px
+				background-size: cover
+				background-repeat: no-repeat
+				background-position: center
+		&-text
+			padding: 127px 149px 90px 70px
+			background-image: url('../img/about-bg-line-left.png'), url('../img/about-bg-line-right.png')
+			background-position: left -50px, right bottom 38px
+			background-repeat: no-repeat
+		&-title
+			display: block
+			margin-bottom: 72px
+			color: #f05333
+			font-size: 59px
+			font-weight: bold
+			line-height: 87px
+			text-transform: uppercase
+		&-desc
+			display: block
+			margin-bottom: 84px
+			color: #3e3e3e
+			line-height: 26px
+		&-dots
+			margin: 0 -20px
+			padding: 0
+			list-style: none
+			li
+				display: inline-block
+				width: 12px
+				height: 12px
+				margin: 0 20px
+				border-radius: 50%
+				background-color: #e1e1e1
+				overflow: hidden
+				cursor: pointer
+				&.slick-active
+					background: #f05333
+				button
+					display: none
+.speaker
+	&__item
+		position: relative
+		display: block
+		height: 597px
+		padding: 0
+		color: #ffffff
+		font-size: 25px
+		font-weight: bold
+		text-decoration: none
+		overflow: hidden
+		background-image: linear-gradient( 63deg, rgb(0,127,120) 0%, rgb(43,63,147) 100%)
+		img
+			transform: scale(1.05)
+			transition: transform 0.5s ease
+		&:hover img
+			transform: scale(1.01)
+		&-detail
+			position: absolute
+			padding: 44px
+			width: 100%
+			bottom: 0
+			// background-image: linear-gradient(27deg, #007f78 0%, #2b3f93 100%)
+			z-index: 2
+			transition: all 1s
+		&-img
+			position: absolute
+			z-index: 0
+			object-fit: cover
+			width: 100%
+			height: 597px
+		&-name
+			position: relative
+			display: block
+			margin-bottom: 25px
+			transition: all 0.3s linear
+			&::after
+				content: ""
+				position: absolute
+				left: 0
+				bottom: -10px
+				width: 85px
+				height: 3px
+				background-color: #f26c4f
+		&-post
+			font-size: 21px
+			font-weight: normal
+		&-last
+			display: flex
+			justify-content: center
+			align-items: center
+	&__link-all
+		position: relative
+		font-size: 50px
+		font-weight: bold
+		&::after
+			content: ""
+			position: absolute
+			left: 0
+			bottom: -10px
+			width: 0
+			height: 5px
+			background-color: #f26c4f
+			transition: width 0.3s ease
+		&:hover::after
+			width: 100%
+.media
+	*
+		padding: 0
+	a
+		display: block
+		height: 100%
+	img
+		min-height: 100%
+		object-fit: cover
+		object-position: center
+	&__item-left
+		height: 481px
+	&__item-video a
+		position: relative
+		&::after
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-image: url('../img/play-button.png'), linear-gradient( 63deg, rgba(0,127,120,0.5) 0%, rgba(43,63,147,0.5) 100%)
+			background-repeat: no-repeat
+			background-position: center
+			opacity: 0
+			transition: all 0.3s
+		&:hover::after
+			opacity: 1
+	&__item
+		background-image: linear-gradient( 63deg, rgb(0,127,120) 0%, rgb(43,63,147) 100%)
+		overflow: hidden
+		img
+			transform: scale(1.05)
+			transition: transform 0.5s
+		&:hover img
+			transform: scale(1.01)
+.news
+	padding-top: 115px
+	padding-bottom: 100px
+	overflow: hidden
+	&__item
+		padding-left: 45px
+		padding-right: 45px
+		a
+			text-decoration: none
+			display: block
+		span
+			display: block
+	&__img
+		position: relative
+		margin-bottom: 44px
+		img
+			position: relative
+			z-index: 3
+		&::before, &::after
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			transition: transform 0.5s ease
+		&::before
+			background-color: #f05333
+			z-index: 2
+			transform: rotate(-5deg)
+		&::after
+			background: url('../img/bg-line.png')
+			z-index: 1
+			transform: rotate(-10deg)
+		&:hover::after, &:hover::before
+			transform: rotate(0deg)
+	&__name
+		margin-bottom: 24px
+		color: #010101
+		font-size: 42px
+		font-weight: bold
+		line-height: 1
+		transition: all 0.2s ease
+		&:hover
+			color: #f05333
+	&__desc
+		margin-bottom: 38px
+		color: #0c0c0c
+		font-size: 18px
+	&__link
+		position: relative
+		display: inline-block !important
+		color: #f05333
+		font-size: 18px
+		font-weight: bold
+		&::after
+			content: ""
+			position: absolute
+			left: 0
+			bottom: -3px
+			width: 0
+			height: 3px
+			background-color: #f26c4f
+			transition: width 0.3s ease
+		&:hover::after
+			width: 100%
+.partners
+	padding-top: 136px
+	padding-bottom: 76px
+	background: #242f7f url('../img/partner-bg.png') no-repeat center top
+	&__item
+		margin-bottom: 70px
+		text-align: center
+	&__link
+		display: block
+		text-align: center
+	&__img
+		display: inline-block
+		width: auto
+		max-height: 144px
+.footer
+	padding-top: 28px
+	padding-bottom: 34px
+	color: #ffffff
+	background-image: linear-gradient(-22deg, #007f78 0%, #2b3f93 100%)
+	a
+		color: #ffffff
+		text-decoration: none
+		transition: color 0.2s
+		&:hover
+			color: #f05333
+	&__top
+		padding-bottom: 25px
+		margin-bottom: 33px
+		border-bottom: 1px solid #ebebeb
+	&__logo
+		max-width: 113px
+	&__menu
+		text-align: right
+		&-link
+			display: inline-block
+			padding: 10px 30px
+	&__copyright
+		text-align: right
+
+
+
+@media (max-width: 1200px)
+	.main-about
+		&__title
+			margin-top: 100px
+			margin-bottom: 70px
+			font-size: 42px
+			line-height: 1.3em
+	.focus
+		&__slider
+			&-text
+				padding: 55px
+			&-title
+				margin-bottom: 40px
+				font-size: 36px
+				line-height: 1.5em
+	.speaker
+		&__item
+			height: 380px
+			font-size: 20px
+			&-post
+				font-size: 18px
+		&__link-all
+			font-size: 32px
+	.media
+		&__item
+			&-left
+				height: 350px
+	.news
+		&__name
+			font-size: 32px
+	.footer
+		&__menu
+			text-align: right
+			&-link
+				padding: 10px 15px
+
+@media (max-width: 992px)
+	.header
+		&__logo
+			max-width: 350px
+			display: flex
+			align-items: center
+		&__lang
+			display: none
+	.news
+		&__item
+			padding-left: 20px
+			padding-right: 20px
+		&__name
+			font-size: 28px
+	.focus
+		&__slider
+			&-text
+				padding: 35px
+			&-title
+				font-size: 28px
+
+@media (max-width: 768px)
+	.main-about
+		&__title
+			font-size: 26px
+			margin-top: 30px
+			margin-bottom: 40px
+	.focus
+		&__slider
+			&-text
+				padding-bottom: 55px
+			&-title
+				font-size: 20px
+			&-desc
+				font-size: 14px
+				line-height: 1.5em
+				margin-bottom: 20px
+	.media
+		&__item
+			height: 350px
+	.news
+		&__name
+			font-size: 18px
+		&__desc
+			font-size: 14px
+
+@media (max-width: 576px)
+	.btn
+		font-size: 14px
+	.header
+		&__logo
+			width: 80px
+			background: url('../img/logo-small.png') no-repeat left center
+			img
+				display: none
+	.main-about
+		background-image: linear-gradient(23deg, #007f78 0%, #2b3f93 100%)
+		&__text
+			margin-bottom: 70px
+		&__img
+			width: 100%
+			max-width: 270px
+	.news
+		&__item
+			margin-bottom: 50px
+	.footer
+		&__logo
+			max-width: 150px
+			margin-bottom: 20px
+		&__menu
+			text-align: left
+			&-link
+				display: block
+				padding: 10px 0
+		&__copyright
+			margin-top: 20px
+			text-align: left
